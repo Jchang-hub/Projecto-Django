@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %} consulta {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        Consulta
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Consulta</h4>
+
+        {% include 'forms/form.html' %}
+
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+{% endblock %}

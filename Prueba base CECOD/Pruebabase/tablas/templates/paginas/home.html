@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block titulo %} Home {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title"></h4>
+        <div class="table-responsive">
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Nacimiento</th>
+                        <th>Pais</th>
+                        <th>Nacionalidad</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for persona in personas %}
+                    <tr>
+                        <td><a href="{% url 'consulta' persona.id %}">{{ persona.id }}</a> </td>
+                        <td>{{ persona.nombre }}</td>
+                        <td>{{ persona.strdt }}</td>
+                        <td>{{ persona.strpais }}</td>
+                        <td>{{ persona.nacionalidadp }}</td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+        
+
+
+    </div>
+    <div class="card-footer text-muted">
+        <a name="" id="" class="btn btn-primary" href="{% url 'nuevo' %}" role="button">Nuevo</a>
+    </div>
+</div>
+
+{% endblock %}
